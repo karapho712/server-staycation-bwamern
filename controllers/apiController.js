@@ -87,7 +87,7 @@ module.exports = {
 
       const bank = await Bank.find();
 
-      // test
+      // test2
 
       const testimonial = {
         _id: "te1238iasdwes1",
