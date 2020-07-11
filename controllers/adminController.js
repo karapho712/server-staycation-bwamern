@@ -1,3 +1,4 @@
+require("dotenv").config();
 const Category = require("../models/Category");
 const Bank = require("../models/Bank");
 const Item = require("../models/Item");
@@ -15,6 +16,10 @@ const bcrypt = require("bcryptjs");
 
 const { totalmem } = require("os");
 const Users = require("../models/Users");
+
+const databaseFrom = `${process.env.DB_LOCAL}`;
+
+// var env = `${process.env.REACT_APP_HOST}`;
 
 module.exports = {
   viewSignIn: async (req, res) => {
@@ -69,6 +74,7 @@ module.exports = {
 
   viewDashboard: async (req, res) => {
     try {
+      // console.log(process.env.DB_LOCAL);
       const member = await Member.find();
       const booking = await Booking.find();
       const item = await Item.find();
@@ -161,6 +167,7 @@ module.exports = {
         title: "Staycation | Bank",
         alert,
         bank,
+        databaseFrom,
         user: req.session.user,
       });
     } catch (error) {
@@ -311,8 +318,10 @@ module.exports = {
         title: "Staycation | Show Image Item",
         alert,
         item,
+        databaseFrom,
         action: "show image",
         user: req.session.user,
+        databaseFrom,
       });
     } catch (error) {
       req.flash("alertMessage", `${error.message}`);
@@ -427,13 +436,15 @@ module.exports = {
 
       const feature = await Feature.find({ itemId: itemId });
       const activity = await Activity.find({ itemId: itemId });
-      console.log(activity);
+
       res.render("admin/item/detail_item/view_detail_item", {
         title: "Staycation | Detail Item",
         alert,
         itemId,
         feature,
         activity,
+        databaseFrom,
+        // env,
         user: req.session.user,
       });
     } catch (error) {

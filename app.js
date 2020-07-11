@@ -12,15 +12,17 @@ const flash = require("connect-flash");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
-mongoose.connect(
-  "mongodb+srv://hijabcd712:bwamern@cluster0.vqvqy.mongodb.net/db_staycation?retryWrites=true&w=majority",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-  }
-);
+// heroku
+// "mongodb+srv://hijabcd712:bwamern@cluster0.vqvqy.mongodb.net/db_staycation?retryWrites=true&w=majority"
+// localhost
+// "mongodb://127.0.0.1:27017/db_fullmern"
+
+mongoose.connect("mongodb://127.0.0.1:27017/db_fullmern", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+});
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");

@@ -1,0 +1,4 @@
+http://localhost:3000
+https://admin-hijab-staycation.herokuapp.com
+
+${process.env.REACT_APP_HOST}

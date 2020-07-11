@@ -3,7 +3,7 @@ var mongoose = require("mongoose");
 
 // Connect to MongoDB via Mongoose
 seeder.connect(
-  "mongodb+srv://hijabcd712:bwamern@cluster0.vqvqy.mongodb.net/db_staycation?retryWrites=true&w=majority",
+  "mongodb://127.0.0.1:27017/db_fullmern",
   {
     useNewUrlParser: true,
     useCreateIndex: true,
@@ -101,6 +101,7 @@ var data = [
         country: "Indonesia",
         city: "Lampung",
         isPopular: false,
+        categoryId: mongoose.Types.ObjectId("5e96cbe292b97300fc901111"),
         description:
           "Minimal techno is a minimalist subgenre of techno music. It is characterized by a stripped-down aesthetic that exploits the use of repetition and understated development. Minimal techno is thought to have been originally developed in the early 1990s by Detroit-based producers Robert Hood and Daniel Bell.",
         unit: "night",
@@ -147,6 +148,7 @@ var data = [
         country: "Indonesia",
         city: "Bandung",
         isPopular: false,
+        categoryId: mongoose.Types.ObjectId("5e96cbe292b97300fc901111"),
         description:
           "Minimal techno is a minimalist subgenre of techno music. It is characterized by a stripped-down aesthetic that exploits the use of repetition and understated development. Minimal techno is thought to have been originally developed in the early 1990s by Detroit-based producers Robert Hood and Daniel Bell.",
         unit: "night",
@@ -518,14 +520,14 @@ var data = [
         nameBank: "Mandiri",
         nomorRekening: "089898",
         name: "elfin",
-        imageUrl: "images/9999999999.png",
+        imageUrl: "images/logo mandiri.png",
       },
       {
         _id: mongoose.Types.ObjectId("5e96cbe292b97300fc903323"),
         nameBank: "BCA",
         nomorRekening: "878678",
         name: "elfin",
-        imageUrl: "images/9999999999.png",
+        imageUrl: "images/logo bca.png",
       },
     ],
   },
