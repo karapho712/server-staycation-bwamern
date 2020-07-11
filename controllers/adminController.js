@@ -17,7 +17,7 @@ const bcrypt = require("bcryptjs");
 const { totalmem } = require("os");
 const Users = require("../models/Users");
 
-const databaseFrom = `${process.env.DB_LOCAL}`;
+const databaseFrom = `${process.env.DB_DEPLOY_SERVER}`;
 
 // var env = `${process.env.REACT_APP_HOST}`;
 
